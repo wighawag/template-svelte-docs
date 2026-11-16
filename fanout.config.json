@@ -1,0 +1,7 @@
+{
+  "stem": "github:wighawag/template-svelte-shadcn",
+  "branches": {
+    "main": {}
+  },
+  "verify": "pnpm install && pnpm --filter ./web format:check && pnpm verify"
+}
