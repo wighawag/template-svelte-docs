@@ -34,7 +34,7 @@ web/vite.plugins.ts            the docs engine's Vite plugin, beside Tailwind, i
 
 # The site
 web/src/app.css                the docs' styles: the page background all the way down, the prose on the theme tokens, code blocks and search excerpts
-web/src/web-config.json        the template's name and description as a docs site
+web/src/web-config.json        the template's name and description as a docs site, and `theme` "system" for its light theme
 web/src/lib/index.ts           the docs (the generated manifest and loaders) and the site search, composed with the app
-web/src/routes/+layout.svelte  the mode watcher on the system preference (the stem's dark default dropped, for a light theme), and the site header, the page in `<main>` and the search dialog; the overlay layers as the stem's
+web/src/routes/+layout.svelte  the site header, the page in `<main>` and the search dialog; the overlay layers as the stem's
 web/src/routes/+error.svelte   the error page on shadcn's button, with the docs' navigation back

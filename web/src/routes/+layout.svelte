@@ -4,6 +4,7 @@
 	import NavigationProgress from '$lib/components/NavigationProgress.svelte';
 	import SiteHeader from '$lib/docs/SiteHeader.svelte';
 	import SearchDialog from '$lib/docs/SearchDialog.svelte';
+	import {theme} from '$lib/theme';
 	import {LAYERS} from '$lib/core/ui/layers';
 	import {ModeWatcher} from 'mode-watcher';
 	import {docs, notifications, route, search, serviceWorker} from '$lib';
@@ -11,13 +12,17 @@
 	import {routeOfParam} from '$lib/core/docs/routes';
 	import {name} from '../web-config.json';
 	import {navigating, page} from '$app/state';
+	import {onMount} from 'svelte';
 	import '../app.css';
 	let {children} = $props();
 
 	let searchOpen = $state(false);
+	// After <ModeWatcher>'s own onMount (a child mounts first): see core/theme.
+	onMount(theme.enforce);
 </script>
 
-<ModeWatcher />
+<!-- The mode follows `theme` in src/web-config.json ("system" here, for the docs' light theme): see the stem's layout and core/theme. -->
+<ModeWatcher {...theme.modeWatcher} />
 
 <SiteHeader
 	manifest={docs.manifest}

@@ -5,6 +5,7 @@
 	"canonicalURL": "https://localhost",
 	"ENSName": null,
 	"themeColor": "#000000",
+	"theme": "system",
 	"appleStatusBarStyle": "black-translucent",
 	"icon": "static/icon.png",
 	"maskableIcons": [
